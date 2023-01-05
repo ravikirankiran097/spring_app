@@ -5,7 +5,7 @@ services:
     container_name: "cer_db"
     ports:
       - 27017:27017
-  springboot-mongodb:
+  spring_app:
     image: spring_app:1.0
     container_name: spring_app
     ports:
