@@ -3,8 +3,8 @@ WORKDIR /app
 COPY . .
 RUN mvn install
 
-FROM openjdk:8
+FROM adoptopenjdk/openjdk11:jre-11.0.10_9-alpine
 WORKDIR /app
-COPY --from=build /app/target/springboot-mongo-docker.jar /app/springboot-mongo-docker.jar
+COPY --from=build /app/target/*.jar /app/*.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","springboot-mongo-docker.jar"]
+ENTRYPOINT ["java","-jar","*.jar"]
