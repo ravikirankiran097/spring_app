@@ -31,3 +31,9 @@ jobs:
           context: .
           push: true
           tags: ravikirankiran097/springapp:latest
+      -
+        name: Run the build process with Docker
+        uses: addnab/docker-run-action@v3
+        with:
+          image: ravikirankiran097/springapp:latest
+          run: java -jar *.jar
